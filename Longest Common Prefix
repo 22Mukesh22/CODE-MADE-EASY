@@ -1,0 +1,28 @@
+#include<iostream>
+#include<vector>
+#include<string>                       
+using namespace std;    
+string prefix = "There is No match";
+
+string LCP(string X,string Y)
+{
+
+    int i=0; 
+    int j=0;
+    while(i<X.length() && j<Y.length())
+    {
+        if(X[i]!=Y[j])
+            return prefix;
+        i++,j++;    
+    }
+    string sub=X.substr(0,i);
+    return sub; 
+}
+
+int main()
+{
+    string X= "Flower";
+    string Y= "Flask";
+    cout<<LCP(X,Y)<<endl;
+    return 0;
+}
